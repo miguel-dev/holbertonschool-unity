@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        #if UNITY_STANDALONE || UNITY_WEBPLAYER
+
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
             rigidBody.AddForce(speed * Time.deltaTime, 0 , 0);
@@ -56,6 +58,14 @@ public class PlayerController : MonoBehaviour
         {
             rigidBody.AddForce(0, 0, -speed * Time.deltaTime);
         }
+
+        #elif UNITY_ANDROID
+
+        Vector3 movement = new Vector3(-Input.acceleration.y, 0, Input.acceleration.x);
+
+        rigidBody.AddForce(movement * speed * Time.deltaTime);
+
+        #endif
     }
 
     void OnTriggerEnter(Collider other)
