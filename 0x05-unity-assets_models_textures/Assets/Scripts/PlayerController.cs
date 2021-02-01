@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
     private CharacterController control;
+    public GameObject mainCamera;
     float moveHorizontal;
     float moveVertical;
     float speed;
@@ -26,11 +27,19 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 relativePos = transform.position - mainCamera.transform.position;
+        relativePos.y = 0;
+        relativePos.Normalize();
+
         if (control.isGrounded) {
             moveHorizontal = Input.GetAxisRaw("Horizontal");
             moveVertical = Input.GetAxisRaw("Vertical");
-            movement = new Vector3(moveHorizontal, 0f, moveVertical).normalized;
-            movement = transform.TransformDirection(movement);
+            movement = moveHorizontal * mainCamera.transform.right + moveVertical * relativePos;
+            movement.Normalize();
+            if (movement != Vector3.zero)
+            {
+                transform.forward = movement;
+            }
             movement *= speed;
             if (Input.GetButton("Jump"))
                 movement.y = jumpSpeed;
