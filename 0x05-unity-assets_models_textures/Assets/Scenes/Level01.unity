@@ -3190,6 +3190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1491261530}
+  TimerText: {fileID: 8879162818853858758}
 --- !u!143 &2135060902
 CharacterController:
   m_ObjectHideFlags: 0

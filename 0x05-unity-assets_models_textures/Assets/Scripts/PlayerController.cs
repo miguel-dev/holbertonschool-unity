@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private float jumpSpeed;
     private float gravity;
     private Vector3 movement = Vector3.zero;
+    public Text TimerText;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(transform.position);
         Vector3 relativePos = transform.position - mainCamera.transform.position;
         relativePos.Normalize();
         relativePos.y = 0;
@@ -47,6 +48,8 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(0f, 30f, 0f);
             movement = Vector3.zero;
+            GetComponent<Timer>().enabled = false;
+            TimerText.text = "0:00.00";
         }
     }
 }
