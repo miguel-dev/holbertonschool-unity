@@ -2208,6 +2208,7 @@ GameObject:
   - component: {fileID: 1356226204}
   - component: {fileID: 1356226203}
   - component: {fileID: 1356226202}
+  - component: {fileID: 1356226206}
   m_Layer: 0
   m_Name: WinFlag
   m_TagString: Untagged
@@ -2285,11 +2286,24 @@ Transform:
   m_GameObject: {fileID: 1356226201}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.1, y: 1.25, z: 144.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1356226206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356226201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fc75a9135588c4292a696271e37528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: {fileID: 8879162818853858758}
 --- !u!1 &1378406551
 GameObject:
   m_ObjectHideFlags: 0
