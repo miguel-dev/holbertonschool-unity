@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(transform.position);
         Vector3 relativePos = transform.position - mainCamera.transform.position;
         relativePos.Normalize();
         relativePos.y = 0;
@@ -41,10 +42,11 @@ public class PlayerController : MonoBehaviour
         }
         movement.y -= gravity * Time.deltaTime;
         control.Move(movement * Time.deltaTime);
-
+        
         if (transform.position.y < -21)
         {
-            transform.position = new Vector3(0f, 21f, 0f);
+            transform.position = new Vector3(0f, 30f, 0f);
+            movement = Vector3.zero;
         }
     }
 }

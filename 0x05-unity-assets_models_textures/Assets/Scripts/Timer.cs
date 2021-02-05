@@ -21,14 +21,9 @@ public class Timer : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        double seconds = Math.Round(timer, 2);
-        if (seconds == 60.00)
-        {
-            timer = 0;
-            minutes++;
-        }
-        string min = minutes.ToString();
-        string sec = seconds.ToString(System.Globalization.CultureInfo.InvariantCulture);
-        TimerText.text = $"{min}:{sec}";
+        double seconds = (int)(timer % 60);
+        minutes = (int)(seconds / 60);
+        double fractions = ((timer - seconds) * 100) % 100;
+        TimerText.text = $"{minutes.ToString("0")}:{seconds.ToString("00")}.{fractions.ToString("00")}";
     }
 }
