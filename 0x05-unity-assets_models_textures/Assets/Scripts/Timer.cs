@@ -20,8 +20,8 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TimerText.text == "0:00.00")
-            timer = 0;
+        //if (TimerText.text == "0:00.00")
+            //timer = 0;
         
         timer += Time.deltaTime;
         double seconds = (int)(timer % 60);

@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
             movement = Vector3.zero;
             GetComponent<Timer>().enabled = false;
             TimerText.text = "0:00.00";
+            TimerText.color = Color.white;
+            TimerText.fontSize = 48;
         }
     }
 }
