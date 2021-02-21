@@ -8,13 +8,14 @@ public class PlayerController : MonoBehaviour
 {
     private CharacterController control;
     public GameObject mainCamera;
+    public Text TimerText;
+    public Canvas pauseCanvas;
     private float moveHorizontal;
     private float moveVertical;
     private float speed;
     private float jumpSpeed;
     private float gravity;
     private Vector3 movement = Vector3.zero;
-    public Text TimerText;
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,17 @@ public class PlayerController : MonoBehaviour
             TimerText.text = "0:00.00";
             TimerText.color = Color.white;
             TimerText.fontSize = 48;
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (Input.GetKeyDown("escape"))
+        {
+            if (Time.timeScale == 1)
+                pauseCanvas.GetComponent<PauseMenu>().Pause();
+            else
+                pauseCanvas.GetComponent<PauseMenu>().Resume();
         }
     }
 }
