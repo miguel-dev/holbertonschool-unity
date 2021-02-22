@@ -14,7 +14,7 @@ public class WinMenu : MonoBehaviour
     {
         int currentIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (currentIndex == 3)
+        if (currentIndex == 4)
             SceneManager.LoadScene("MainMenu");
         else
             SceneManager.LoadScene(currentIndex + 1);
