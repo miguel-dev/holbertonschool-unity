@@ -9,6 +9,7 @@ public class Timer : MonoBehaviour
     public Text TimerText;
     private double timer;
     private double minutes;
+    public Text FinalTime;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +29,10 @@ public class Timer : MonoBehaviour
         minutes = (int)(seconds / 60);
         double fractions = ((timer - seconds) * 100) % 100;
         TimerText.text = $"{minutes.ToString("0")}:{seconds.ToString("00")}.{fractions.ToString("00")}";
+    }
+
+    public void Win()
+    {
+        FinalTime.text = TimerText.text;
     }
 }

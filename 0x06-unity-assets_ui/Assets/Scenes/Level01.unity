@@ -1662,9 +1662,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3524513849252346234, guid: 01b8bad4a8d810e4f99c9c395336331d,
         type: 3}
+      propertyPath: FinalTime
+      value: 
+      objectReference: {fileID: 1316040465}
+    - target: {fileID: 3524513849252346234, guid: 01b8bad4a8d810e4f99c9c395336331d,
+        type: 3}
       propertyPath: TimerText
       value: 
       objectReference: {fileID: 8879162818853858758}
+    - target: {fileID: 3524513849252346234, guid: 01b8bad4a8d810e4f99c9c395336331d,
+        type: 3}
+      propertyPath: WinCanvas
+      value: 
+      objectReference: {fileID: 1389679808}
     - target: {fileID: 4640906114032292534, guid: 01b8bad4a8d810e4f99c9c395336331d,
         type: 3}
       propertyPath: TimerText
@@ -2834,6 +2844,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1388758892}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1316040465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5947428942487171630, guid: 8f92a729c8b69cd41ac45579aeebe42e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5947428941577985343}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1328584694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3066,6 +3088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: {fileID: 8879162818853858758}
+  WinCanvas: {fileID: 1389679808}
 --- !u!1001 &1359694784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3292,6 +3315,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0a409b132372084987f40183993e371, type: 3}
+--- !u!223 &1389679808 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 5947428942950877695, guid: 8f92a729c8b69cd41ac45579aeebe42e,
+    type: 3}
+  m_PrefabInstance: {fileID: 5947428941577985343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1390608842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 0779e5d1277806848b714d6a6f32c6c6,
