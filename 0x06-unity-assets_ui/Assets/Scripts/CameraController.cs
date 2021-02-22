@@ -9,6 +9,7 @@ public class CameraController : MonoBehaviour
     private Vector3 offset_x;
     private Vector3 offset_y;
     private float turnSpeed = 3f;
+    public bool isInverted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +31,12 @@ public class CameraController : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             offset = Quaternion.AngleAxis (Input.GetAxis("Mouse X") * turnSpeed, Vector3.up) * offset;
-            offset = Quaternion.AngleAxis (Input.GetAxis("Mouse Y") * turnSpeed, Vector3.right) * offset;
+
+            if (isInverted == true)
+                offset = Quaternion.AngleAxis (-Input.GetAxis("Mouse Y") * turnSpeed, Vector3.right) * offset;
+            else
+                offset = Quaternion.AngleAxis (Input.GetAxis("Mouse Y") * turnSpeed, Vector3.right) * offset;
+
             transform.position = player.transform.position + offset;
             transform.LookAt(player.transform.position);
         }
