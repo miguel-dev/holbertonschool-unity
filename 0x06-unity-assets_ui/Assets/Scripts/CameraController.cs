@@ -17,11 +17,11 @@ public class CameraController : MonoBehaviour
         offset = new Vector3(0f, 1.5f, -7f);
         offset_x = new Vector3(0f, 1.5f, -7f);
         offset_y = new Vector3(0f, 0f, 1f);
-    }
-
-    void Update()
-    {
         
+        if (PlayerPrefs.GetString("isInverted") == "Yes")
+                isInverted = true;
+        else
+                isInverted = false;
     }
 
     // Update is called once per frame
