@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   TimerText: {fileID: 0}
+  pauseCanvas: {fileID: 0}
 --- !u!114 &3524513849252346234
 MonoBehaviour:
   m_ObjectHideFlags: 0

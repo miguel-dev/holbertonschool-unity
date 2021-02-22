@@ -47,6 +47,17 @@ public class PlayerController : MonoBehaviour
         movement.y -= gravity * Time.deltaTime;
         control.Move(movement * Time.deltaTime);
         
+        if (Input.GetKeyDown("escape"))
+        {
+            if (Time.timeScale == 1)
+                pauseCanvas.GetComponent<PauseMenu>().Pause();
+            else
+                pauseCanvas.GetComponent<PauseMenu>().Resume();
+        }
+    }
+
+    void FixedUpdate()
+    {
         if (transform.position.y < -21)
         {
             transform.position = new Vector3(0f, 30f, 0f);
@@ -55,17 +66,6 @@ public class PlayerController : MonoBehaviour
             TimerText.text = "0:00.00";
             TimerText.color = Color.white;
             TimerText.fontSize = 48;
-        }
-    }
-
-    void LateUpdate()
-    {
-        if (Input.GetKeyDown("escape"))
-        {
-            if (Time.timeScale == 1)
-                pauseCanvas.GetComponent<PauseMenu>().Pause();
-            else
-                pauseCanvas.GetComponent<PauseMenu>().Resume();
         }
     }
 }
