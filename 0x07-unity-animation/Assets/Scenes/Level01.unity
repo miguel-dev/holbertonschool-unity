@@ -1670,21 +1670,11 @@ PrefabInstance:
       propertyPath: TimerText
       value: 
       objectReference: {fileID: 8879162818853858758}
-    - target: {fileID: 3524513849252346234, guid: 01b8bad4a8d810e4f99c9c395336331d,
-        type: 3}
-      propertyPath: WinCanvas
-      value: 
-      objectReference: {fileID: 1389679808}
     - target: {fileID: 4640906114032292534, guid: 01b8bad4a8d810e4f99c9c395336331d,
         type: 3}
       propertyPath: TimerText
       value: 
       objectReference: {fileID: 8879162818853858758}
-    - target: {fileID: 4640906114032292534, guid: 01b8bad4a8d810e4f99c9c395336331d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4640906114032292534, guid: 01b8bad4a8d810e4f99c9c395336331d,
         type: 3}
       propertyPath: mainCamera
