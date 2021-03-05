@@ -40,8 +40,11 @@ public class PlayerController : MonoBehaviour
             moveVertical = Input.GetAxisRaw("Vertical");
             movement = (moveHorizontal * mainCamera.transform.right) + (moveVertical * relativePos);
             movement.Normalize();
-            targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+            if (movement.x != 0 || movement.z != 0)
+            {
+                targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+            }
             movement *= speed;
             if (Input.GetButton("Jump"))
                 movement.y = jumpSpeed;
