@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public Canvas pauseCanvas;
     private float moveHorizontal;
     private float moveVertical;
+    private float targetAngle;
     private float speed;
     private float jumpSpeed;
     private float gravity;
@@ -38,8 +39,9 @@ public class PlayerController : MonoBehaviour
             moveHorizontal = Input.GetAxisRaw("Horizontal");
             moveVertical = Input.GetAxisRaw("Vertical");
             movement = (moveHorizontal * mainCamera.transform.right) + (moveVertical * relativePos);
-            movement = transform.TransformDirection(movement);
             movement.Normalize();
+            targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
             movement *= speed;
             if (Input.GetButton("Jump"))
                 movement.y = jumpSpeed;
