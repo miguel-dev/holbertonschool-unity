@@ -1672,6 +1672,11 @@ PrefabInstance:
       objectReference: {fileID: 8879162818853858758}
     - target: {fileID: 4640906114032292534, guid: 01b8bad4a8d810e4f99c9c395336331d,
         type: 3}
+      propertyPath: Ty
+      value: 
+      objectReference: {fileID: 1865373298}
+    - target: {fileID: 4640906114032292534, guid: 01b8bad4a8d810e4f99c9c395336331d,
+        type: 3}
       propertyPath: TimerText
       value: 
       objectReference: {fileID: 8879162818853858758}
@@ -1685,6 +1690,26 @@ PrefabInstance:
       propertyPath: pauseCanvas
       value: 
       objectReference: {fileID: 1277770515}
+    - target: {fileID: 5866666020947078393, guid: 01b8bad4a8d810e4f99c9c395336331d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666020947078393, guid: 01b8bad4a8d810e4f99c9c395336331d,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 91bd813bedcd1bf41b9d570cbe968230, type: 2}
+    - target: {fileID: 5866666020947078393, guid: 01b8bad4a8d810e4f99c9c395336331d,
+        type: 3}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666020947078393, guid: 01b8bad4a8d810e4f99c9c395336331d,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7649200671610532035, guid: 01b8bad4a8d810e4f99c9c395336331d,
         type: 3}
       propertyPath: m_RootOrder
@@ -4773,6 +4798,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 85c55f33a90f1774b94434ad53ca3a0e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba7a1193441cf6e4ea78c2ef8a6d52a4, type: 3}
+--- !u!1 &1865373298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149048290361, guid: 01b8bad4a8d810e4f99c9c395336331d,
+    type: 3}
+  m_PrefabInstance: {fileID: 757612475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1898099070
 GameObject:
   m_ObjectHideFlags: 0

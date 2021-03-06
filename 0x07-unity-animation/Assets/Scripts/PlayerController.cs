@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public GameObject mainCamera;
     public Text TimerText;
     public Canvas pauseCanvas;
+    public GameObject Ty;
+    private Animator animator;
     private float moveHorizontal;
     private float moveVertical;
     private float targetAngle;
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
         speed = 7f;
         jumpSpeed = 9f;
         gravity = 21f;
+        animator = Ty.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -40,11 +43,22 @@ public class PlayerController : MonoBehaviour
             moveVertical = Input.GetAxisRaw("Vertical");
             movement = (moveHorizontal * mainCamera.transform.right) + (moveVertical * relativePos);
             movement.Normalize();
+            
             if (movement.x != 0 || movement.z != 0)
             {
                 targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
             }
+            
+            if (movement.x != 0 || movement.y != 0 || movement.z != 0)
+            {
+                animator.enabled = false;
+            }
+            else
+            {
+                animator.enabled = true;
+            }
+
             movement *= speed;
             if (Input.GetButton("Jump"))
                 movement.y = jumpSpeed;
