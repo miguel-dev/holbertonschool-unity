@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         PlayerPrefs.SetInt("Scene", SceneManager.GetActiveScene().buildIndex);
         control = GetComponent<CharacterController> ();
-        speed = 7f;
+        speed = 11f;
         jumpSpeed = 9f;
         gravity = 21f;
         animator = Ty.GetComponent<Animator>();
