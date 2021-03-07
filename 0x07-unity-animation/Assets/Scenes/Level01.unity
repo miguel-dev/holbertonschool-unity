@@ -1699,7 +1699,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b2ad4b504fe675e46b21f7e23f300450, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666020947078393, guid: 01b8bad4a8d810e4f99c9c395336331d,
         type: 3}
       propertyPath: m_UpdateMode
