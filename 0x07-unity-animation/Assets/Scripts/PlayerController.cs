@@ -53,15 +53,20 @@ public class PlayerController : MonoBehaviour
             if (movement.x != 0 || movement.z != 0)
             {
                 animator.SetBool("isRunning", true);
+                animator.SetBool("isIdle", false);
             }
             else
             {
                 animator.SetBool("isRunning", false);
+                animator.SetBool("isIdle", true);
             }
 
             movement *= speed;
             if (Input.GetButton("Jump"))
+            {
                 movement.y = jumpSpeed;
+                animator.SetTrigger("isJumping");
+            }
         }
         movement.y -= gravity * Time.deltaTime;
         control.Move(movement * Time.deltaTime);
