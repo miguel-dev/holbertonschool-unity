@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
         relativePos.y = 0;
 
         if (control.isGrounded) {
+            animator.SetBool("isFalling", false);
             moveHorizontal = Input.GetAxisRaw("Horizontal");
             moveVertical = Input.GetAxisRaw("Vertical");
             movement = (moveHorizontal * mainCamera.transform.right) + (moveVertical * relativePos);
@@ -66,6 +67,13 @@ public class PlayerController : MonoBehaviour
             {
                 movement.y = jumpSpeed;
                 animator.SetTrigger("isJumping");
+            }
+        }
+        else
+        {
+            if (transform.position.y < 0.9)
+            {
+                animator.SetBool("isFalling", true);
             }
         }
         movement.y -= gravity * Time.deltaTime;
