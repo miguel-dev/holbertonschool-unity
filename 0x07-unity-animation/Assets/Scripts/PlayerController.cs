@@ -50,13 +50,13 @@ public class PlayerController : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
             }
             
-            if (movement.x != 0 || movement.y != 0 || movement.z != 0)
+            if (movement.x != 0 || movement.z != 0)
             {
-                animator.enabled = false;
+                animator.SetBool("isRunning", true);
             }
             else
             {
-                animator.enabled = true;
+                animator.SetBool("isRunning", false);
             }
 
             movement *= speed;
