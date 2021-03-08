@@ -71,7 +71,8 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            animator.SetBool("isFalling", true);
+            if (transform.position.y < 0.7)
+                animator.SetBool("isFalling", true);
         }
         movement.y -= gravity * Time.deltaTime;
         control.Move(movement * Time.deltaTime);
