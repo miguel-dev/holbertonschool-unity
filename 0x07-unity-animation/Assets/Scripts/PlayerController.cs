@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private float speed;
     private float jumpSpeed;
     private float gravity;
+    private bool immobile = false;
     private Vector3 movement = Vector3.zero;
 
     // Start is called before the first frame update
@@ -44,8 +45,8 @@ public class PlayerController : MonoBehaviour
             moveVertical = Input.GetAxisRaw("Vertical");
             movement = (moveHorizontal * mainCamera.transform.right) + (moveVertical * relativePos);
             movement.Normalize();
-            
-            if ((movement.x != 0 || movement.z != 0) && (!animator.GetCurrentAnimatorStateInfo(0).IsName("FallingDown.Falling Flat Impact") && !animator.GetCurrentAnimatorStateInfo(0).IsName("FallingDown.Getting Up")))
+
+            if ((movement.x != 0 || movement.z != 0) && !immobile)
             {
                 targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour
         }
         movement.y -= gravity * Time.deltaTime;
 
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("FallingDown.Falling Flat Impact") && !animator.GetCurrentAnimatorStateInfo(0).IsName("FallingDown.Getting Up"))
+        if (!immobile)
             control.Move(movement * Time.deltaTime);
         
         if (Input.GetKeyDown("escape"))
@@ -99,5 +100,15 @@ public class PlayerController : MonoBehaviour
             TimerText.color = Color.white;
             TimerText.fontSize = 48;
         }
+    }
+
+    public void DontMove()
+    {
+        immobile = true;
+    }
+
+    public void Move()
+    {
+        immobile = false;
     }
 }
