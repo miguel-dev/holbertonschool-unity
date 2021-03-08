@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
             movement = (moveHorizontal * mainCamera.transform.right) + (moveVertical * relativePos);
             movement.Normalize();
             
-            if (movement.x != 0 || movement.z != 0)
+            if ((movement.x != 0 || movement.z != 0) && (!animator.GetCurrentAnimatorStateInfo(0).IsName("FallingDown.Falling Flat Impact") && !animator.GetCurrentAnimatorStateInfo(0).IsName("FallingDown.Getting Up")))
             {
                 targetAngle = Mathf.Atan2(movement.x, movement.z) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
@@ -75,7 +75,9 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isFalling", true);
         }
         movement.y -= gravity * Time.deltaTime;
-        control.Move(movement * Time.deltaTime);
+
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsName("FallingDown.Falling Flat Impact") && !animator.GetCurrentAnimatorStateInfo(0).IsName("FallingDown.Getting Up"))
+            control.Move(movement * Time.deltaTime);
         
         if (Input.GetKeyDown("escape"))
         {

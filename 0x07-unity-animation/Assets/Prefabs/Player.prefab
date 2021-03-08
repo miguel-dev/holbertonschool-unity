@@ -131,6 +131,7 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   TimerText: {fileID: 0}
   pauseCanvas: {fileID: 0}
+  Ty: {fileID: 919132149048290361}
 --- !u!114 &3524513849252346234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,8 +213,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: ty
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: b48f723d2b1f67c46a4451041fd779a5,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b2ad4b504fe675e46b21f7e23f300450, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b48f723d2b1f67c46a4451041fd779a5, type: 3}
+--- !u!1 &919132149048290361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b48f723d2b1f67c46a4451041fd779a5,
+    type: 3}
+  m_PrefabInstance: {fileID: 967250280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &543450652766533251 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b48f723d2b1f67c46a4451041fd779a5,
